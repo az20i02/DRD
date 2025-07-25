@@ -118,5 +118,12 @@ Desktop.ini
 /back/*.pt
 /back/yolov8s.pt
 
+# Exclude large model weight files
+**/weights/
+**/*.pt
+*.pth
+*.h5
+*.pkl
+
 # Server logs
 /back/server.log
