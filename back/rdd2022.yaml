@@ -1,0 +1,6 @@
+path: /Users/aziz/projects/Dataset/output_directory/RDD2022_all_countries/China_MotorBike
+train: train/images
+val: train/images  # Use the same directory as train if no separate validation dataset
+test: test/  # Optional key for testing
+nc: 5  # Number of classes
+names: ['D00', 'D10', 'D20', 'D40', 'Repair']  # Class names

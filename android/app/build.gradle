@@ -1,0 +1,78 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.drd"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        // TODO: Update this to your own unique Application ID for production
+        applicationId = "com.example.drd"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        
+        // Enable multidex for large apps
+        multiDexEnabled true
+        
+        // Add memory and performance optimizations
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Optimize for emulator performance
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64'
+        }
+    }
+
+    signingConfigs {
+        release {
+            // Create a keystore for production signing
+            // For now, using debug key - CHANGE THIS FOR PRODUCTION
+            keyAlias = 'androiddebugkey'
+            keyPassword = 'android'
+            storeFile = file('../debug.keystore')
+            storePassword = 'android'
+        }
+    }
+
+    buildTypes {
+        release {
+            // Enable code shrinking, obfuscation, and optimization
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            
+            // Use release signing config
+            signingConfig = signingConfigs.release
+            
+            // Enable debugging for release builds (disable for final production)
+            debuggable = false
+        }
+        
+        debug {
+            signingConfig = signingConfigs.debug
+            debuggable = true
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}

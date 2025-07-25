@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:15
+    container_name: drd_postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: DRD
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: azizz20029CiroBenghazi
+    ports:
+      - "5433:5432"
+
+volumes:
+  postgres_data:
