@@ -1,2 +1,122 @@
-/.DS_Store
-/build
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Django related
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Django media files
+/back/media/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Django secret key and sensitive settings
+/back/DRD/local_settings.py
+
+# Python virtual environment
+venv/
+env/
+ENV/
+
+# Django migrations (optional - comment out if you want to include them)
+# **/migrations/*.py
+# !**/migrations/__init__.py
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Training outputs and model files
+/back/runs/
+/back/output/
+/back/*.pt
+/back/yolov8s.pt
+
+# Server logs
+/back/server.log
